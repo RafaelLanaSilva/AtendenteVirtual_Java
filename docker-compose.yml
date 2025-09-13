@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_bd_atendimentos
+    restart: always
+    environment:
+      POSTGRES_DB: bd_atendimentos
+      POSTGRES_USER: user_rafa
+      POSTGRES_PASSWORD: Admin123
+    ports:
+      - "5436:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # diretório
+
+volumes:
+  postgres_data:
